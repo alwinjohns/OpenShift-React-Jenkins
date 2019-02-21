@@ -8,6 +8,7 @@ pipeline {
                     echo "~~~~~~~~~~ Getting all the REACT dependencies ~~~~~~~~"
                     ls -lah
                 '''
+                sh 'export PATH=/usr/local/bin:$PATH'
                 sh 'npm install'
             }
         }
