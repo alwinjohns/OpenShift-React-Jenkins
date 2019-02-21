@@ -7,6 +7,7 @@ pipeline {
                 sh '''
                     echo "~~~~~~~~~~ Getting all the REACT dependencies ~~~~~~~~"
                     ls -lah
+                    ls -la /home/jenkins/.jenkins/tools/jenkins.plugins.nodejs.tools.NodeJSInstallation/node_js/bin/
                 '''
                 sh 'export PATH=/usr/local/bin:$PATH'
                 sh 'npm install'
