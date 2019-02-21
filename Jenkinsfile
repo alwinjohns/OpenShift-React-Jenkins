@@ -5,9 +5,26 @@ pipeline {
             steps {
                 sh 'echo "Hello World"'
                 sh '''
-                    echo "Multiline shell steps works too"
+                    echo "~~~~~~~~~~ Getting all the REACT dependencies ~~~~~~~~"
                     ls -lah
                 '''
+                sh 'npm install'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'export PORT=8000'
+                sh 'npm start'
+            }
+        }
+        stage('Unit test') {
+            steps {
+                sh 'echo "Unit test"'
+            }
+        }
+        stage('Integration test suite') {
+            steps {
+                sh 'echo "Integration test"'
             }
         }
     }
