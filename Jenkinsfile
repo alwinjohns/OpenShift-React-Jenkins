@@ -3,15 +3,20 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo "Hello World"'
-                sh '''
-                    echo "~~~~~~~~~~ Getting all the REACT dependencies ~~~~~~~~"
-                    ls -lah
-                '''
-                sh 'npm -v;'
-                // sh 'export PATH=/usr/local/bin:$PATH'
+                nodejs(nodeJSInstallationName: 'node8') {
+                    sh 'npm config ls'
+                    sh 'npm -v'
+                    sh 'npm i'
+                }
+                // sh 'echo "Hello World"'
+                // sh '''
+                //     echo "~~~~~~~~~~ Getting all the REACT dependencies ~~~~~~~~"
+                //     ls -lah
+                // '''
+                // sh 'npm -v;'
+                // // sh 'export PATH=/usr/local/bin:$PATH'
 
-                sh 'npm install'
+                // sh 'npm install'
             }
         }
         stage('Deploy') {
