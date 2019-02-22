@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'export PORT=8000'
+                // sh 'export PORT=8000'
                 sh 'npm start'
             }
         }
