@@ -4,19 +4,9 @@ pipeline {
         stage('Build') {
             steps {
                 nodejs(nodeJSInstallationName: 'node8') {
-                    sh 'npm config ls'
                     sh 'npm -v'
                     sh 'npm i -ddd'
                 }
-                // sh 'echo "Hello World"'
-                // sh '''
-                //     echo "~~~~~~~~~~ Getting all the REACT dependencies ~~~~~~~~"
-                //     ls -lah
-                // '''
-                // sh 'npm -v;'
-                // // sh 'export PATH=/usr/local/bin:$PATH'
-
-                // sh 'npm install'
             }
         }
         stage('Deploy') {
