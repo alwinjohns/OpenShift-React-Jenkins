@@ -6,7 +6,7 @@ pipeline {
                 nodejs(nodeJSInstallationName: 'node8') {
                     sh 'npm config ls'
                     sh 'npm -v'
-                    sh 'npm i'
+                    sh 'npm i -ddd'
                 }
                 // sh 'echo "Hello World"'
                 // sh '''
