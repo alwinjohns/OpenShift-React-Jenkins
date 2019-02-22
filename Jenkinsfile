@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:6-alpine'
-            args '-p 3000:3000'
-        }
-    }
+    agent any
     stages {
         stage('Build') {
             steps {
@@ -13,7 +8,7 @@ pipeline {
                     echo "~~~~~~~~~~ Getting all the REACT dependencies ~~~~~~~~"
                     ls -lah
                 '''
-                sh 'node -v; npm -v;'
+                sh 'npm -v;'
                 // sh 'export PATH=/usr/local/bin:$PATH'
 
                 sh 'npm install'
