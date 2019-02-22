@@ -11,8 +11,10 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                // sh 'export PORT=8000'
-                sh 'npm start'
+                nodejs(nodeJSInstallationName: 'node8') {
+                    sh 'npm start'
+                    // sh 'export PORT=8080'
+                }
             }
         }
         stage('Unit test') {
