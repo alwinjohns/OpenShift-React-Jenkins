@@ -6,13 +6,14 @@ pipeline {
                 nodejs(nodeJSInstallationName: 'node8') {
                     sh 'npm -v'
                     sh 'npm i -ddd'
+                    sh 'npm i -g react-scripts -ddd'
                 }
             }
         }
         stage('Deploy') {
             steps {
                 nodejs(nodeJSInstallationName: 'node8') {
-                    sh 'npx start'
+                    sh 'npm start'
                     // sh 'export PORT=8080'
                 }
             }
