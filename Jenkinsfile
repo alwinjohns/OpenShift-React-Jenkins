@@ -12,7 +12,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 nodejs(nodeJSInstallationName: 'node8') {
-                    sh 'npm run start'
+                    sh 'npx start'
                     // sh 'export PORT=8080'
                 }
             }
