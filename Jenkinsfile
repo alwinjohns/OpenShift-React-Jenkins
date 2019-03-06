@@ -15,11 +15,11 @@ pipeline {
             steps {
                 scripts {
                     env.name = 'react'
+                    steps.sh "oc delete buildconfig  " + env.name +" --ignore-not-found=true"
+                    steps.sh "oc delete imagestream  " + env.name +" --ignore-not-found=true"
+                    steps.sh "oc delete routes  " + env.name +" --ignore-not-found=true"
+                    steps.sh "oc delete deployments  " + env.name +"-deploy --ignore-not-found=true"
                 }
-                steps.sh "oc delete buildconfig  " + env.name +" --ignore-not-found=true"
-                steps.sh "oc delete imagestream  " + env.name +" --ignore-not-found=true"
-                steps.sh "oc delete routes  " + env.name +" --ignore-not-found=true"
-                steps.sh "oc delete deployments  " + env.name +"-deploy --ignore-not-found=true"
             }
         }
         stage('Deploy') {
