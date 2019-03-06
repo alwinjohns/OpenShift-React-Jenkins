@@ -14,7 +14,7 @@ pipeline {
             steps {
                 nodejs(nodeJSInstallationName: 'node8') {
 
-                    // sh 'oc new-build --name react-pipeline --strategy docker --binary'
+                    sh 'oc new-build --name react-pipeline --strategy docker --binary'
                     sh 'oc start-build react-pipeline --from-dir . --follow'
                     // sh 'export PORT=8080'
                 }
