@@ -11,7 +11,7 @@ pipeline {
                 }
             }
         }
-        stage {
+        stage('clean up') {
             steps {
                 scripts {
                     env.name = 'react'
