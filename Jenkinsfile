@@ -12,7 +12,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 nodejs(nodeJSInstallationName: 'node8') {
-                    sh 'npx start'
+                    // sh 'npx start'
+                    sh 'oc new-build --name react --strategy docker --binary'
+                    sh 'oc start-build react --from-dir . --follow'
                     // sh 'export PORT=8080'
                 }
             }
