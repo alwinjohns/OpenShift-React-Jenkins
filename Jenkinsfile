@@ -6,6 +6,7 @@ pipeline {
                 nodejs(nodeJSInstallationName: 'node8') {
                     sh 'npm -v'
                     sh 'npm i -ddd'
+                    sh 'npm i -g react-scripts -ddd'
                 }
             }
         }
