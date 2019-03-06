@@ -5,4 +5,4 @@ RUN ls -la
 WORKDIR app/
 RUN ls -la
 RUN npm install
-CMD npm start
+CMD npx start
