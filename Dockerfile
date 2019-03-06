@@ -5,4 +5,4 @@ RUN ls -la
 WORKDIR app/
 RUN ls -la
 RUN npm install
-CMD npx start
+CMD npx react-scripts start
